@@ -1,0 +1,251 @@
+@import url('https://use.typekit.net/vdl0oul.css');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/* Tekstopmaak op basis van de Britse richtlijnen voor dyslexie (via https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide)*/
+:root {
+    --standard-width: 60em;
+    --standard-padding: 1.5em;
+    --regular-font: 1.2rem/1.5rem 'Arial', sans serif;
+}
+
+* {
+    margin: 0;      /* verwijdert onnodige witruimte (via https://www.internetingishard.com/html-and-css/css-box-model/) */
+    padding: 0;
+    box-sizing: border-box;     /* voorkomt overflow (via https://www.internetingishard.com/html-and-css/css-box-model/) */
+}
+
+body {
+    min-height: 100vh;  /* voor sticky footer */
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 60px;
+    width: 100%;
+    padding: 0 6vw;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li {
+    padding-left: 6vw;
+    list-style: none;
+}
+
+header a {
+    font: normal 500 2em 'roc-grotesk', sans-serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+header nav ul li a {
+    color: #000000;
+    font: var(--regular-font);
+    font-kerning: normal;
+    text-decoration: none;
+}
+
+header a:hover, 
+header nav ul li a:hover, 
+.overzichtcontainer article:hover h2 {
+    background: linear-gradient(transparent 60%, #e0ce5c 40%);
+}
+
+main {
+    max-width: var(--standard-width);
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;   /* voor sticky footer */
+}
+
+.afbeeldingcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.afbeeldingcontainer img {
+    width: 100%;
+}
+
+.leescontainer {
+    margin-top: 50vh;
+    padding: var(--standard-padding);
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+h1 {
+    font: normal 500 2em 'roc-grotesk', sans-serif;
+    color: #a2cb4c;
+}
+
+h2 {
+    font: 500 2rem 'Helvetica Neue', sans-serif;
+    font-kerning: normal;
+    letter-spacing: 0.035rem;   /* vormgeving: spatiëring */
+    word-spacing: 0.1225rem;
+}
+
+p {
+    font: var(--regular-font);
+    font-kerning: normal;
+}
+
+.overzichtcontainer {
+    position: relative;
+    top: 0;
+    left: -0.25em;
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.overzichtcontainer article {
+    width: 18.5em;
+    padding: 1em;
+    margin: 0.25em;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.overzichtcontainer article img {
+    position: relative;
+    top: -1em;
+    left: -1em;
+    height: 18.5em;
+    width: 18.5em;
+}
+
+footer {
+    max-width: var(--standard-width);
+    padding-inline: var(--standard-padding);
+    background: #f6f6f6;
+    display: flex;
+    justify-content: left;
+}
+
+/* Gebruikersvoorkeuren */
+@media (prefers-color-scheme: light) {
+    #prefers-color-scheme::after {
+        content: 'Light';
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #prefers-color-scheme::after {
+        content: 'Dark';
+    }
+}
+
+@media (prefers-contrast: no-preference) {
+    #prefers-contrast::after {
+        content: 'No preference';
+    }
+}
+
+@media (prefers-contrast: less) {
+    #prefers-contrast::after {
+        content: 'Less';
+    }
+}
+
+@media (prefers-contrast: more) {
+    #prefers-contrast::after {
+        content: 'More';
+    }
+}
+
+@media (prefers-contrast: custom) {
+    #prefers-contrast::after {
+        content: 'Custom';
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #prefers-reduced-motion::after {
+        content: 'No preference';
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #prefers-reduced-motion::after {
+        content: 'Reduced';
+    }
+}
+
+@media (prefers-reduced-transparency: no-preference) {
+    #prefers-reduced-transparency::after {
+        content: 'No preference';
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    #prefers-reduced-transparency::after {
+        content: 'Reduce';
+    }
+}
+
+@media (inverted-colors: none) {
+    #inverted-colors::after {
+        content: 'None';
+    }
+}
+
+@media (inverted-colors: inverted) {
+    #inverted-colors::after {
+        content: 'Inverted';
+    }
+}
+
+/*
+prefers-color-scheme
+prefers-contrast
+prefers-reduced-motion
+prefers-reduced-transparency	wordt alleen door Chrome en Edge ondersteund; je kan het wel toepassen...
+inverted-colors			        wordt alleen door Safari ondersteund; omdat ik het kan toepassen in Windows, neem ik het mee
+
+prefers-color-scheme = light / dark, default is light, dark is een ingestelde modus maar kan ook worden bepaald door sensoren 
+(tijd, omgevingslicht) en door de browser als de gebruiker zelf een kleurenpalet heeft ingesteld (dan geldt tevens 'forced-
+colors: active') dat in de basis meer overeenkomt met dark (en anders met light)
+light is de standaardinstelling
+De waarde wordt bepaald door: 
+- de voorkeursinstelling van de gebruiker (waarbij 'no preference' gelijk staat aan light)
+- het zelfgekozen kleurenpalet van de gebruiker (waarbij 'forced-colors: active'); de browser bepaalt welke waarde het beste overeenkomt
+- optioneel: sensoren zoals tijd en/of omgevingslicht
+
+prefers-contrast = no-preference / more / less / custom, default is no-preference, volgens mij wordt contrast op dit moment 
+bepaald door het zelfgekozen kleurenpalet (waarbij 'forced-colors: active'). In het geval van custom is het zelfgekozen kleur-
+enpalet niet per se hoger of lager in contrast. Over het algemeen is good practice om bij deze instelling 
+
+«In addition to forced-colors: active, the user agent must also match one of prefers-contrast: more or prefers-contrast: 
+less if it can determine that the forced color palette chosen by the user has a particularly high or low contrast, and 
+must make prefers-contrast: custom match otherwise.
+
+«Similarly, if the forced color palette chosen by the user fits within one of the color schemes described by prefers-
+color-scheme, the corresponding value must also match.»
+https://drafts.csswg.org/mediaqueries-5/#forced-colors
+*/
