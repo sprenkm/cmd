@@ -1,0 +1,5 @@
+Afbeeldingen
+index.html	https://earthobservatory.nasa.gov/images/76670/winds-and-waves-stir-dust-and-mud
+trias.html	https://earthobservatory.nasa.gov/images/83931/desert-coast-morocco-western-sahara
+krijt.html	https://earthobservatory.nasa.gov/images/148104/red-sea-rainforests
+overzicht.html	https://www.flickr.com/photos/24354425@N03/30104773878/
