@@ -1,0 +1,182 @@
+@import url('https://use.typekit.net/vdl0oul.css');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+/* Tekstopmaak op basis van de Britse richtlijnen voor dyslexie (via https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide)*/
+:root {
+    --standard-width: 60em;
+    --standard-padding: 1.5em;
+    --regular-font: 1.2rem/1.5rem 'Arial', sans serif;
+}
+
+* {
+    margin: 0;      /* verwijdert onnodige witruimte (via https://www.internetingishard.com/html-and-css/css-box-model/) */
+    padding: 0;
+    box-sizing: border-box;     /* voorkomt overflow (via https://www.internetingishard.com/html-and-css/css-box-model/) */
+}
+
+body {
+    min-height: 100vh;  /* voor sticky footer */
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 60px;
+    width: 100%;
+    padding: 0 6vw;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li {
+    padding-left: 6vw;
+    list-style: none;
+}
+
+header a {
+    font: normal 500 2em 'roc-grotesk', sans-serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+header nav ul li a {
+    color: #000000;
+    font: var(--regular-font);
+    font-kerning: normal;
+    text-decoration: none;
+}
+
+header a:hover, 
+header nav ul li a:hover, 
+.overzichtcontainer a article:hover h2 {
+    background: linear-gradient(transparent 60%, #a2cb4c 40%);
+}
+
+main {
+    max-width: var(--standard-width);
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;   /* voor sticky footer */
+}
+
+.afbeeldingcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.afbeeldingcontainer img {
+    width: 100%;
+}
+
+.leescontainer {
+    margin-top: 50vh;
+    padding: var(--standard-padding);
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+#index {
+    margin-top: 3em;
+}
+
+h1 {
+    font: normal 500 2em 'roc-grotesk', sans-serif;
+    color: #a2cb4c;
+}
+
+h2 {
+    font: 500 1.8rem 'Helvetica Neue', sans-serif;
+    font-kerning: normal;
+    letter-spacing: 0.035rem;   /* vormgeving: spatiëring */
+    word-spacing: 0.1225rem;
+}
+
+p {
+    font: var(--regular-font);
+    font-kerning: normal;
+}
+
+.overzichtcontainer {
+    position: relative;
+    top: 0;
+    left: -0.25em;
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.overzichtcontainer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.overzichtcontainer article, .overzichtcontainer a article {
+    width: 18.5em;
+    padding: 1em;
+    margin: 0.25em;
+    background-color: gainsboro;
+}
+
+.overzichtcontainer article div, .overzichtcontainer a article div {
+    position: relative;
+    top: -1em;
+    left: -1em;
+    height: 18.5em;
+    width: 18.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.overzichtcontainer article div img, .overzichtcontainer a article div img {
+    max-height: 18.5em;
+}
+
+#prefers-color-scheme {
+    color: gainsboro;
+}
+
+/* Gebruikersvoorkeuren */
+@media (prefers-color-scheme: light) {
+    #prefers-color-scheme::after {
+        content: 'Light';
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #prefers-color-scheme::after {
+        content: 'Dark';
+    }
+}
+
+footer {
+    max-width: var(--standard-width);
+    padding-inline: var(--standard-padding);
+    background: #f6f6f6;
+    display: flex;
+    justify-content: left;
+}
