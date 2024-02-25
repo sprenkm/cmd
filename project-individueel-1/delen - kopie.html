@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groendak Gespot</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="groen">
+        <!-- Onderstaande checkbox onzichtbaar voor gebruiker; wordt gebruikt om nav te openen -->
+        <input type="checkbox" id="menu">
+        <div></div>
+
+        <a href="./index.html">
+            <img alt="Logo in rood en blauw" src="./images/SVG/logo-rood-blauw.svg" height="42">
+            <img alt="Logo in groen en geel" src="./images/SVG/logo-groen-geel.svg" height="42">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home &#10230;</a></li>
+                <li><a href="./delen.html">Foto delen &#10230;</a></li>
+                <li><a href="./boten.html">Boten bekijken &#10230;</a></li>
+                <li><a href="./over.html">Over ons &#10230;</a></li>
+            </ul>
+        </nav>
+
+        <label for="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>Menu</span>
+        </label>
+    </header>
+
+    <main>
+        <div class="kleurvak groen">
+            <h1>Foto delen</h1>
+        </div>
+
+        <article id="formulier">
+            <!-- Input voor het selecteren van een bestand; onzichtbaar voor de gebruiker -->
+            <input type="file" id="bestand-input" name="bestand" accept="image/*" required>
+
+            <div>
+                <div>
+                    <label for="bestand-input">Kies een afbeelding</label>
+                    <p>Verplicht</p>
+                </div>
+                <button id="bestand-knop">Bladeren...</button>
+            </div>
+
+            <img id="voorbeeld" alt="Voorbeeld van het geselecteerde bestand" src="./images/preview.png">
+            <p id="bestandsnaam">Geen afbeelding geselecteerd...</p>  
+
+            <div>
+                <div>
+                    <label for="straat">Straat</label>
+                    <p>Optioneel</p>
+                </div>
+                <div>
+                    <input type="text" id="straat" name="straat" placeholder="Singel">
+                    <p>De naam van de straat waar je deze woonboot hebt gespot.</p>     
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label for="schermnaam">Schermnaam</label>
+                    <p>Optioneel</p>
+                </div>
+                <div>
+                    <input type="text" id="schermnaam" name="schermnaam" placeholder="Gebruiker123">
+                    <p>Deze naam wordt weergegeven bij de foto op de website.</p>    
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label for="emailadres">E-mailadres</label>
+                    <p>Optioneel</p>
+                </div>
+                <div>
+                    <input type="email" id="emailadres" name="emailadres" placeholder="naam@voorbeeld.nl">
+                    <p>Ontvang een e-mail zodra je foto op de website staat.</p>    
+                </div>
+            </div>
+
+            <button type="button" id="versturen">Versturen</button>
+        </article>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

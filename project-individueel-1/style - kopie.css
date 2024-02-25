@@ -1,0 +1,352 @@
+@import url("https://use.typekit.net/ban4zgk.css");
+
+:root {
+    --font-regular: 400 1em 'forma-djr-micro', sans-serif;
+    --body-padding: 0 30px;
+    --header-height: 72px;
+    --main-margin: 0 0 12px 0;
+    --colour-blue: #5054c7;
+    --colour-green: #50c878;
+    --colour-red: #c75350;
+    --colour-white: #fafafa;
+    --colour-yellow: #c7af50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* zorgt ervoor dat alle elementen binnen de 100% schermafmetingen blijven*/
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--colour-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.groen {
+    background-color: var(--colour-green);
+}
+
+.rood {
+    background-color: var(--colour-red);
+}
+
+.geel {
+    background-color: var(--colour-yellow);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: var(--header-height);
+    width: 100vw;
+    padding: var(--body-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header input[type='checkbox'] {
+    display: none;
+}
+
+header div:first-of-type {
+    width: 42px;
+}
+
+header a {
+    position: relative;
+    z-index: 30;
+}
+
+header a img:last-of-type {
+    visibility: collapse;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+header nav {
+    visibility: collapse;
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    z-index: 20;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--colour-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+header nav ul {
+    width: 100vw;
+    margin-top: var(--header-height);
+    padding: var(--body-padding);
+}
+
+header nav ul li {
+    list-style: none;
+    padding-bottom: 1em;
+}
+
+header nav ul li a {
+    font: 1.5em 'Arial', sans-serif;
+    color: var(--colour-white);
+    text-decoration: none;
+    padding: 1em 0;
+}
+
+header label {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header label span:nth-of-type(even) {
+    height: 3px;
+    width: 32px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+header label span:nth-of-type(odd) {
+    height: 5px;
+    width: 0;
+    overflow: hidden;
+}
+
+/* Navigatie opent */
+header input[type='checkbox']:checked ~ a img:first-of-type {
+    display: none;
+}
+
+header input[type='checkbox']:checked ~ a img:last-of-type {
+    visibility: visible;
+    position: inherit;
+    z-index: inherit;
+}
+
+header input[type='checkbox']:checked ~ nav {
+    visibility: visible;
+    left: 0;
+}
+
+header input[type='checkbox']:checked ~ label span:nth-of-type(2) {
+    position: relative;
+    top: 1px;
+    background-color: var(--colour-white);
+    transform: rotate(45deg);
+}
+
+header input[type='checkbox']:checked ~ label span:nth-of-type(4) {
+    width: 0;
+    visibility: collapse;
+}
+
+header input[type='checkbox']:checked ~ label span:nth-of-type(6) {
+    position: relative;
+    bottom: 1px;
+    background-color: var(--colour-white);
+    transform: rotate(-45deg);
+}
+
+header input[type='checkbox']:checked ~ label span:nth-of-type(odd) {
+    visibility: collapse;
+}
+
+main {
+    flex-grow: 1;
+    padding: var(--body-padding);
+    margin-bottom: 12px;
+}
+
+.kleurvak {
+    position: relative;
+    top: 0;
+    left: -30px;
+    height: fit-content;
+    width: 100vw;
+    margin-top: var(--header-height);
+    padding: var(--body-padding);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.knop, #versturen {
+    position: relative;
+    top: 0;
+    left: calc(100vw - 185px);
+    font: 1em 'Arial', sans-serif;
+    text-decoration: none;
+    height: 2.5em;
+    width: 125px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+    display: block flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+main h1 {
+    font: 400 2em 'forma-djr-micro', sans-serif;
+    color: black;
+    margin: var(--main-margin);
+}
+
+main h2 {
+    font: 500 1.7em 'forma-djr-micro', sans-serif;
+}
+
+main h3 {
+    font: 400 1.3em 'forma-djr-micro', sans-serif;
+}
+
+main p, footer p {
+    font: 400 1em 'Arial', sans-serif;
+    color: black;
+}
+
+.galerij div:first-of-type, main div + p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.galerij div, .galerij ul li p, #formulier div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galerij div a, main a {
+    font: 400 1em 'Arial', sans-serif;
+    color: var(--colour-blue);
+}
+
+.galerij ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galerij ul li {
+    list-style: none;
+    margin: var(--main-margin);
+}
+
+.galerij ul li img {
+    width: 315px;
+}
+
+.galerij a {
+    color: var(--colour-white);
+}
+
+#index-over-ons {
+    position: relative;
+    top: 0;
+    left: -30px;
+    height: fit-content;
+    width: 100vw;
+    padding: var(--body-padding);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#index-over-ons h2 {
+    margin: var(--main-margin);
+}
+
+#index-over-ons a {
+    color: var(--colour-red);
+}
+
+#formulier {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+#formulier div {
+    height: fit-content;
+    width: 315px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#formulier img + p {
+    margin: var(--main-margin);
+}
+
+#formulier div div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#formulier div div label {
+    font: 400 1.2em 'forma-djr-micro', sans-serif;
+}
+
+#formulier div div:first-of-type p {
+    font-style: italic;
+}
+
+#formulier div div input[type='text'], #formulier div div input[type='email'] {
+    font: 1em 'Arial', sans-serif;
+    height: 1.75em;
+    width: 190px;
+    border: none;
+    border-bottom: 3px solid black;
+    padding-left: 1px;
+    background-color: var(--colour-white);
+}
+
+#formulier div div input[type='text']:focus, #formulier div div input[type='email']:focus {
+    border-bottom: 3px solid var(--colour-blue);
+}
+
+#bestand-input {
+    display: none;
+}
+
+#bestand-knop {
+    font: 1em 'Arial', sans-serif;
+    color: var(--colour-blue);
+    height: 2.5em;
+    width: 125px;
+    border: 2px solid var(--colour-blue);
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#delen {
+    color: var(--colour-green);
+}
+
+#versturen {
+    color: var(--colour-white);
+}
