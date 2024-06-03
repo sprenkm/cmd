@@ -30,17 +30,18 @@ camera.position.z = 50
 const sizeInput = document.getElementById("size-input")
 let size = sizeInput.value
 
-sizeInput.oninput = () => {
+function cubeSize() {
     size = sizeInput.value
 }
 
+sizeInput.addEventListener("mousemove", cubeSize())
+sizeInput.addEventListener("touchmove", cubeSize())
+
 function render() {
     requestAnimationFrame(render)
-
     cube.position.z = size
     cube.rotation.x += 0.01
     cube.rotation.y += 0.01
-
     renderer.render(scene, camera)
 }
 render()
