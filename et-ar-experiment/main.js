@@ -30,7 +30,7 @@ camera.position.z = 50
 const sizeInput = document.getElementById("size-input")
 let size = sizeInput.value
 
-sizeInput.onchange = () => {
+sizeInput.oninput = () => {
     size = sizeInput.value
 }
 
